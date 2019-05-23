@@ -39,9 +39,10 @@ module Radicle.Ipfs
     , ipfsHttpPost'
     ) where
 
-import           Protolude hiding (TypeError, catch, catches, try)
+import           Protolude hiding (TypeError, catch)
 
 import           Control.Exception.Safe
+                 (MonadCatch, MonadMask, catch, throw, throwString)
 import qualified Control.Exception.Safe as Safe
 import           Control.Monad.Fail
 import           Control.Monad.Trans.Resource
